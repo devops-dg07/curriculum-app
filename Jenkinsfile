@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f curriculum-front/Dockerfile -t devopsdg07/curriculum-front:latest .'
+        sh 'sudo docker build -f curriculum-front/Dockerfile -t devopsdg07/curriculum-front:latest .'
       }
     }
 
@@ -25,13 +25,13 @@ pipeline {
         DOCKERHUB_PASSWORD = 'MqP@23#aDwG@23#y'
       }
       steps {
-        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
+        sh 'sudo docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
       }
     }
 
     stage('Push') {
       steps {
-        sh 'docker push devopsdg07/curriculum-front:latest'
+        sh 'sudo docker push devopsdg07/curriculum-front:latest'
       }
     }
 

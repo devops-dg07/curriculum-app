@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f curriculum-front/Dockerfile -t fuze365/curriculum-front:latest .'
+        sh 'docker build -f curriculum-front/Dockerfile -t devopsdg07/curriculum-front:latest .'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push fuze365/curriculum-front:latest'
+        sh 'docker push devopsdg07/curriculum-front:latest'
       }
     }
 
